@@ -5,7 +5,7 @@ public class Spawner : MonoBehaviour
 {
     [SerializeField] private Vector3 _vectorDirection;
 
-    [SerializeField] private GameObject _enemy;
+    [SerializeField] private Enemy _enemy;
 
     [SerializeField] private List<GameObject> _spawnPoints;
 
@@ -20,8 +20,8 @@ public class Spawner : MonoBehaviour
     {
         int index = Random.Range(0, _spawnPoints.Count);
 
-        GameObject enemy = Instantiate(_enemy, _spawnPoints[index].transform);
+        Enemy enemy = Instantiate(_enemy, _spawnPoints[index].transform);
 
-        enemy.GetComponent<Mover>().SetVectorDirection(_vectorDirection);
+        enemy.SetVectorDirection(_vectorDirection);
     }
 }

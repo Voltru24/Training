@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Mover : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     private Vector3 _vectorDirection;
 
