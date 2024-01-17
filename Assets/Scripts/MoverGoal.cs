@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MoverGoal : MonoBehaviour
 {
-    [SerializeField] private float speed;
+    [SerializeField] private float _speed;
 
     [SerializeField] private List<Transform> _routePoints;
         
@@ -28,6 +28,6 @@ public class MoverGoal : MonoBehaviour
     {
         Vector3 direction = (_routePoints[_indexRoute].position - transform.position).normalized;
 
-        transform.Translate(direction * speed * Time.deltaTime);
+        transform.Translate(direction * _speed * Time.deltaTime);
     }
 }

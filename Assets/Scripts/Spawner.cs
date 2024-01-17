@@ -3,11 +3,9 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private Vector3 _vectorDirection;
+    [SerializeField] private Transform _transformGoal;
 
-    [SerializeField] private GameObject _enemy;
-
-    [SerializeField] private List<GameObject> _spawnPoints;
+    [SerializeField] private MoverEnemy _enemy;
 
     [SerializeField] private float _repeatRate = 2f;
 
@@ -18,10 +16,8 @@ public class Spawner : MonoBehaviour
 
     public void Spawn()
     {
-        int index = Random.Range(0, _spawnPoints.Count);
+        GameObject enemy = Instantiate(_enemy, transform);
 
-        GameObject enemy = Instantiate(_enemy, _spawnPoints[index].transform);
-
-        enemy.GetComponent<MoverEnemy>().VectorDirection = _vectorDirection;
+        enemy.GetComponent<MoverEnemy>().SetTransformGoal(_transformGoal);
     }
 }

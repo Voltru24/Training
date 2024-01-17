@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class MoverEnemy : MonoBehaviour
 {
-    private Rigidbody _rigidbody;
+    private Transform _transformGoal;
 
-    private void Start()
+    [SerializeField] private float _speed;
+
+    public void SetTransformGoal(Transform transformGoal)
     {
-        _rigidbody = GetComponent<Rigidbody>();    
+        _transformGoal = transformGoal;
     }
 
     private void FixedUpdate()
@@ -16,6 +18,8 @@ public class MoverEnemy : MonoBehaviour
 
     private void Move()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime);
+        Vector3 direction = (_transformGoal.position - transform.position).normalized;
+
+        transform.Translate(direction * _speed * Time.deltaTime);
     }
 }
