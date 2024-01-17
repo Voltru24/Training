@@ -1,8 +1,9 @@
 using UnityEngine;
 
-public class MoverEnemy : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
-    private Transform _transformGoal;
+
+    [SerializeField] private Transform _transformGoal;
 
     [SerializeField] private float _speed;
 

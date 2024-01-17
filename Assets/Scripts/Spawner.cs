@@ -5,7 +5,7 @@ public class Spawner : MonoBehaviour
 {
     [SerializeField] private Transform _transformGoal;
 
-    [SerializeField] private MoverEnemy _enemy;
+    [SerializeField] private Enemy _enemy;
 
     [SerializeField] private float _repeatRate = 2f;
 
@@ -16,8 +16,8 @@ public class Spawner : MonoBehaviour
 
     public void Spawn()
     {
-        GameObject enemy = Instantiate(_enemy, transform);
+        Enemy enemy = Instantiate(_enemy, transform);
 
-        enemy.GetComponent<MoverEnemy>().SetTransformGoal(_transformGoal);
+        enemy.SetTransformGoal(_transformGoal);
     }
 }
