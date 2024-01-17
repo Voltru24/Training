@@ -2,12 +2,9 @@ using UnityEngine;
 
 public class Mover : MonoBehaviour
 {
-    private Rigidbody _rigidbody;
+    public Vector3 VectorDirection { private get; set; }
 
-    private void Start()
-    {
-        _rigidbody = GetComponent<Rigidbody>();    
-    }
+    [SerializeField] private int _speed;
 
     private void FixedUpdate()
     {
@@ -16,6 +13,6 @@ public class Mover : MonoBehaviour
 
     private void Move()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime);
+        transform.Translate(VectorDirection * Time.deltaTime * _speed);
     }
 }
