@@ -22,6 +22,6 @@ public class Spawner : MonoBehaviour
 
         GameObject enemy = Instantiate(_enemy, _spawnPoints[index].transform);
 
-        enemy.GetComponent<Mover>().VectorDirection = _vectorDirection;
+        enemy.GetComponent<Mover>().SetVectorDirection(_vectorDirection);
     }
 }

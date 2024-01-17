@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29a8fef9eb815624b8c6d50c56b165d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _vectorDirection: {x: 1, y: 0, z: 0}
+  _vectorDirection: {x: 0, y: 0, z: 1}
   _enemy: {fileID: 8210215139174663104, guid: 4f73a5bd96a7dfb4699cdc1776b608f8, type: 3}
   _spawnPoints:
   - {fileID: 2098133124}
