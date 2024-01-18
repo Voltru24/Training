@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
@@ -8,38 +9,31 @@ public class Alarm : MonoBehaviour
 
     private float _minVolume = 0;
     private AudioSource _audioSource;
-    private bool _isPenetration = false;
+
+    public void Run()
+    {
+        StopAllCoroutines();
+        StartCoroutine(ÑhangeVolume(_maxVolume));
+    }
+
+    public void Stop()
+    {
+        StopAllCoroutines();
+        StartCoroutine(ÑhangeVolume(_minVolume));
+    }
 
     private void Start()
     {
         _audioSource = GetComponent<AudioSource>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private IEnumerator ÑhangeVolume(float volume)
     {
-        if (other.GetComponent<Rogue>())
+        while (_audioSource.volume != volume)
         {
-            _isPenetration = true;
-        }
-    }
+            _audioSource.volume = Mathf.MoveTowards(_audioSource.volume, volume, _speedVolume * Time.deltaTime);
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.GetComponent<Rogue>())
-        {
-            _isPenetration = false;
-        }
-    }
-
-    private void FixedUpdate()
-    {
-        if (_isPenetration == true)
-        {
-            _audioSource.volume = Mathf.MoveTowards(_audioSource.volume, _maxVolume, _speedVolume * Time.deltaTime);
-        }
-        else
-        {
-            _audioSource.volume = Mathf.MoveTowards(_audioSource.volume, _minVolume, _speedVolume * Time.deltaTime);
+            yield return null;
         }
     }
 }
