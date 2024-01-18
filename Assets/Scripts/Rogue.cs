@@ -13,12 +13,7 @@ public class Rogue : MonoBehaviour
     {
         if (Vector3.Distance(_routePoints[_indexRoute].position, transform.position) < 1)
         {
-            _indexRoute++;
-
-            if (_indexRoute >= _routePoints.Count)
-            {
-                _indexRoute = 0;
-            }
+            _indexRoute = (_indexRoute + 1) % _routePoints.Count;
         }
 
         Move();
