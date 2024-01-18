@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Goal : MonoBehaviour
+public class Rogue : MonoBehaviour
 {
     [SerializeField] private float _speed;
 
