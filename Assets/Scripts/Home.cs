@@ -14,7 +14,7 @@ public class Home : MonoBehaviour
     {
         if (other.GetComponent<Rogue>())
         {
-            _alarm.Run();
+            _alarm.Play();
         }
     }
 

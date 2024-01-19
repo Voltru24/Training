@@ -10,24 +10,24 @@ public class Alarm : MonoBehaviour
     private float _minVolume = 0;
     private AudioSource _audioSource;
 
-    public void Run()
-    {
-        StopAllCoroutines();
-        StartCoroutine(ÑhangeVolume(_maxVolume));
-    }
-
-    public void Stop()
-    {
-        StopAllCoroutines();
-        StartCoroutine(ÑhangeVolume(_minVolume));
-    }
-
     private void Start()
     {
         _audioSource = GetComponent<AudioSource>();
     }
 
-    private IEnumerator ÑhangeVolume(float volume)
+    public void Play()
+    {
+        StopAllCoroutines();
+        StartCoroutine(ChangeVolume(_maxVolume));
+    }
+
+    public void Stop()
+    {
+        StopAllCoroutines();
+        StartCoroutine(ChangeVolume(_minVolume));
+    }
+
+    private IEnumerator ChangeVolume(float volume)
     {
         while (_audioSource.volume != volume)
         {

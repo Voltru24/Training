@@ -5,7 +5,7 @@ public class Rogue : MonoBehaviour
 {
     [SerializeField] private float _speed;
 
-    [SerializeField] private List<Transform> _routePoints;
+    [SerializeField] private Transform[] _routePoints;
         
     private int _indexRoute = 0;
 
@@ -15,7 +15,7 @@ public class Rogue : MonoBehaviour
 
         if (Vector3.Distance(_routePoints[_indexRoute].position, transform.position) < distanceError)
         {
-            _indexRoute = (_indexRoute + 1) % _routePoints.Count;
+            _indexRoute = ++_indexRoute % _routePoints.Length;
         }
 
         Move();
