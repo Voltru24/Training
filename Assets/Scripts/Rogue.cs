@@ -11,7 +11,7 @@ public class Rogue : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float distanceError = 0.001f;
+        float distanceError = 1f;
 
         if (Vector3.Distance(_routePoints[_indexRoute].position, transform.position) < distanceError)
         {
