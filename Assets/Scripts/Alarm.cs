@@ -9,6 +9,7 @@ public class Alarm : MonoBehaviour
 
     private float _minVolume = 0;
     private AudioSource _audioSource;
+    private Coroutine _workChangeVolume;
 
     private void Start()
     {
@@ -17,14 +18,22 @@ public class Alarm : MonoBehaviour
 
     public void Play()
     {
-        StopAllCoroutines();
-        StartCoroutine(ChangeVolume(_maxVolume));
+        if (_workChangeVolume != null)
+        {
+            StopCoroutine(_workChangeVolume);
+        }
+
+        _workChangeVolume = StartCoroutine(ChangeVolume(_maxVolume));
     }
 
     public void Stop()
     {
-        StopAllCoroutines();
-        StartCoroutine(ChangeVolume(_minVolume));
+        if (_workChangeVolume != null)
+        {
+            StopCoroutine(_workChangeVolume);
+        }
+
+        _workChangeVolume = StartCoroutine(ChangeVolume(_minVolume));
     }
 
     private IEnumerator ChangeVolume(float volume)
