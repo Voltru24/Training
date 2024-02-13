@@ -1,9 +1,9 @@
 using UnityEngine;
 using DG.Tweening;
-public class Capsule : MonoBehaviour
+public class Scaler : MonoBehaviour
 {
-    [SerializeField] Vector3 _endValueScale;
-    [SerializeField] float _durationScale;
+    [SerializeField] private Vector3 _endValueScale;
+    [SerializeField] private float _durationScale;
 
     private void Start()
     {

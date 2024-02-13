@@ -1,7 +1,7 @@
 using UnityEngine;
 using DG.Tweening;
 [RequireComponent(typeof(MeshRenderer))]
-public class Cylinder : MonoBehaviour
+public class ChangerColor : MonoBehaviour
 {
     [SerializeField] private Color _colorForChange;
     [SerializeField] private float _durationChangeColor;

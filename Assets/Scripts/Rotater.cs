@@ -1,10 +1,10 @@
 using UnityEngine;
 using DG.Tweening;
 
-public class CubeRotate : MonoBehaviour
+public class Rotater : MonoBehaviour
 {
-    [SerializeField] Vector3 _endValueRotate;
-    [SerializeField] float _durationRotate;
+    [SerializeField] private Vector3 _endValueRotate;
+    [SerializeField] private float _durationRotate;
 
     private void Start()
     {

@@ -1,10 +1,10 @@
 using DG.Tweening;
 using UnityEngine;
 
-public class Sphere : MonoBehaviour
+public class Mover : MonoBehaviour
 {
-    [SerializeField] float _xEndValueMove;
-    [SerializeField] float _durationMove;
+    [SerializeField] private float _xEndValueMove;
+    [SerializeField] private float _durationMove;
 
     private void Start()
     {

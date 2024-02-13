@@ -610,7 +610,9 @@ GameObject:
   - component: {fileID: 936411182}
   - component: {fileID: 936411181}
   - component: {fileID: 936411180}
-  - component: {fileID: 936411179}
+  - component: {fileID: 936411186}
+  - component: {fileID: 936411185}
+  - component: {fileID: 936411184}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -618,24 +620,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &936411179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 936411178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9acb6b8c30d018048993bef8e3b86800, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _endValueRotate: {x: 180, y: 0, z: 0}
-  _durationRotate: 60
-  _endValueScale: {x: 5, y: 10, z: 5}
-  _durationScale: 60
-  _EndValueMove: {x: 9, y: 0, z: 0}
-  _durationMove: 60
 --- !u!65 &936411180
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -714,6 +698,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &936411184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936411178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67569dd3048259448995841dffed9024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _endValueScale: {x: 5, y: 0, z: 0}
+  _durationScale: 15
+--- !u!114 &936411185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936411178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52c924b3969338448795d6145f96e20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _xEndValueMove: 12
+  _durationMove: 15
+--- !u!114 &936411186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936411178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 446799f5f670a0b46b5612c9a50bd10b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _endValueRotate: {x: 95, y: 0, z: 0}
+  _durationRotate: 15
 --- !u!1 &1147276179
 GameObject:
   m_ObjectHideFlags: 0
